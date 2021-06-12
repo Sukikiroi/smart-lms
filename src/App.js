@@ -3,6 +3,13 @@ import './App.css';
  import Navbar from './StudentView/Navbar'
  import Search from './StudentView/Search'
  import MostPopular from './StudentView/MostPopular'
+ import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Bookview from './BooksView/BookView';
 function App() {
   const AllBooks = [
     {
@@ -273,9 +280,22 @@ function App() {
   console.log(AllBooks)
   return (
     <div className="App">
-   <Navbar/>
-   <Search/>
-   <MostPopular/>
+      <Router>
+      <Switch>
+        <Route path="/bookinfo">
+          <Navbar />
+          <Bookview/>
+        </Route>
+        <Route path="/users">
+          <Navbar />
+        </Route>
+        <Route path="/">
+          <Navbar />
+          <Search />
+          <MostPopular />
+        </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
