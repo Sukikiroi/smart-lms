@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
+import MessageModal from './MessageModal'
 const useStyles = makeStyles((theme) => ({
   root: {
  width:'100%',
@@ -85,7 +86,7 @@ const Bookview = () => {
 
 <div className={classes.message}>
 <Tooltip title="You can write a book review and share your experiences.">
-<button>Send Message</button>
+<MessageModal/>
 </Tooltip>
 
 </div>
