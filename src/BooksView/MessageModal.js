@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
    height:'400px',
    width:'350px',
    backgroundColor:'white',
-   border:'none',
-    boxShadow: theme.shadows[5],
+   border:'2px solid dodgerblue',
+   borderRadius:'6px',
+  
     padding: theme.spacing(2, 4, 3),
   },
   sendmessage:{
@@ -27,6 +28,35 @@ const useStyles = makeStyles((theme) => ({
     outline:'none',
     border:'none',
     cursor:'pointer'
+  },
+  form:{
+    height:'200px',
+
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    '& input':{
+      width:'80%',
+      marginTop:'20px',
+      border:'2px solid DeepSkyBlue',
+      borderRadius:'4px',
+      outline:'none',
+      height:'40px'
+    },
+    '& button':{
+      width:'40%',
+      marginTop:'10px',
+      backgroundColor:'black',
+      color:'white',
+      height:'40px',
+      borderRadius:'10px',
+      outline:'none',
+      cursor:'pointer'
+    }
+  },
+  message:{
+    height:'100px',
+   
   }
 }));
 
@@ -66,6 +96,12 @@ export default function TransitionsModal() {
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Message For Agents</h2>
             <p id="transition-modal-description">Agents will always be interested in your opinion of the books you've read. Whether you've loved the book or not, if you give your honest and detailed thoughts then people will find new books that are right for them.</p>
+
+            <div className={classes.form}>
+<input type='text ' placeholder='Full Name '/>
+<input className={classes.message} type='text ' placeholder='Your Message'/>
+<button>Send</button>
+            </div>
           </div>
         </Fade>
       </Modal>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useCallback}  from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
+import {useHistory} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -43,12 +43,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Search = () => {
   const classes = useStyles();
-
+  const history = useHistory();
+  const handleOnClick = useCallback(() => history.push('/Search'), [history]);
   return (
     <div className={classes.root}>
       <div className={classes.search}>
-        <input type="text" placeholder="Search For a Book" />
-        <button>Search</button>
+        <input type="text" placeholder="Search For a Book"  />
+        <button onClick={handleOnClick}>Search</button>
       </div>
 
       

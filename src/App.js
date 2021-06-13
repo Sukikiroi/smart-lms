@@ -1,16 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
- import Navbar from './StudentView/Navbar'
- import Search from './StudentView/Search'
- import MostPopular from './StudentView/MostPopular'
- import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Bookview from './BooksView/BookView';
-import Searchview from './SearchView/SearchView';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./StudentView/Navbar";
+import Search from "./StudentView/Search";
+import MostPopular from "./StudentView/MostPopular";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Bookview from "./BooksView/BookView";
+import Searchview from "./SearchView/SearchView";
 function App() {
   const AllBooks = [
     {
@@ -278,26 +273,29 @@ function App() {
       revision: 4,
     },
   ];
-  console.log(AllBooks)
+  console.log(AllBooks);
   return (
     <div className="App">
       <Router>
-      <Switch>
-        <Route path="/bookinfo">
-          <Navbar />
-          <Bookview/>
-        </Route>
-        <Route path="/Search">
-          <Navbar />
-          <img style={{height:'150px',marginTop:'30px'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccVFIIyU8Fh2YPJwpB7tCylAL2vnwTQq82Q&usqp=CAU'/>
-          <Search />
-          <Searchview/>
-        </Route>
-        <Route path="/">
-          <Navbar />
-          <Search />
-          <MostPopular />
-        </Route>
+        <Switch>
+          <Route path="/bookinfo">
+            <Navbar />
+            <Bookview />
+          </Route>
+          <Route path="/Search">
+            <Navbar />
+            <img
+              style={{ height: "150px", marginTop: "30px" }}
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccVFIIyU8Fh2YPJwpB7tCylAL2vnwTQq82Q&usqp=CAU"
+            />
+            <Search />
+            <Searchview />
+          </Route>
+          <Route path="/">
+            <Navbar />
+            <Search />
+            <MostPopular />
+          </Route>
         </Switch>
       </Router>
     </div>
