@@ -6,6 +6,7 @@ import MostPopular from "./StudentView/MostPopular";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Bookview from "./BooksView/BookView";
 import Searchview from "./SearchView/SearchView";
+import Home from './HomeBook/Home'
 function App() {
   const AllBooks = [
     {
@@ -292,9 +293,7 @@ function App() {
             <Searchview />
           </Route>
           <Route path="/">
-            <Navbar />
-            <Search />
-            <MostPopular />
+           <Home/>
           </Route>
         </Switch>
       </Router>
