@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Badge from "@material-ui/core/Badge";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
+import ContactModal from './ContactModal'
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "80px",
@@ -63,20 +64,18 @@ const Navbar = () => {
             <LocalLibraryIcon />
           </Badge>
         </div>
-
-        <button
-          style={{
-            border: "none",
-            backgroundColor: "whiteSmoke",
-            height: "35px",
-            width: "80px",
-            borderRadius: "60px",
-            cursor: "pointer",
-            outline: "none",
-          }}
-        >
-          Contact
-        </button>
+<ContactModal 
+ style={{
+  border: "none",
+  backgroundColor: "whiteSmoke",
+  height: "35px",
+  width: "80px",
+  borderRadius: "60px",
+  cursor: "pointer",
+  outline: "none",
+}}
+/>
+         
         <button
           style={{
             backgroundColor: "white",
